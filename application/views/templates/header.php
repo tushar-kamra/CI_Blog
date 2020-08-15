@@ -3,6 +3,7 @@
         <title>CI-Blog</title>
         <link rel="stylesheet" href="<?= base_url(); ?>static/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?= base_url(); ?>static/css/style.css">
+        <script src="https://cdn.ckeditor.com/ckeditor5/21.0.0/classic/ckeditor.js"></script>
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -21,6 +22,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>posts">Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>posts/create">Create Post</a>
                     </li>
                 </ul>
             </div>
