@@ -46,4 +46,10 @@ class Post_model extends CI_Model {
         $this->db->where('id', $this->input->post('id'));
         return $this->db->update('posts', $data);
     }
+
+    public function get_categories(){
+        $this->db->order_by('name');
+        $query = $this->db->get('categories');
+        return $query->result_array();
+    }
 }
