@@ -29,13 +29,51 @@
                 </ul>
                 <ul class="navbar-nav navbar-right">
                     <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>users/register">Register</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>posts/create">Create Post</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="<?= base_url() ?>categories/create">Create Categpry</a>
+                        <a class="nav-link" href="<?= base_url() ?>categories/create">Create Category</a>
                     </li>
                 </ul>
             </div>
         </nav>
 
         <div class="container">
+            <!-- Flash message -->
+            <?php if($this->session->flashdata('user_registered')){ ?>
+                <?= "<div class=\"alert alert-dismissible alert-success\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                        <p>" . $this->session->flashdata('user_registered') . "</p>
+                    </div>" ?>
+            <?php } ?>
+
+            <?php if($this->session->flashdata('post_created')){ ?>
+                <?= "<div class=\"alert alert-dismissible alert-success\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                        <p>" . $this->session->flashdata('post_created') . "</p>
+                    </div>" ?>
+            <?php } ?>
+
+            <?php if($this->session->flashdata('post_updated')){ ?>
+                <?= "<div class=\"alert alert-dismissible alert-success\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                        <p>" . $this->session->flashdata('post_updated') . "</p>
+                    </div>" ?>
+            <?php } ?>
+
+            <?php if($this->session->flashdata('category_created')){ ?>
+                <?= "<div class=\"alert alert-dismissible alert-success\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                        <p>" . $this->session->flashdata('category_created') . "</p>
+                    </div>" ?>
+            <?php } ?>
+
+            <?php if($this->session->flashdata('post_deleted')){ ?>
+                <?= "<div class=\"alert alert-dismissible alert-success\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                        <p>" . $this->session->flashdata('post_deleted') . "</p>
+                    </div>" ?>
+            <?php } ?>
