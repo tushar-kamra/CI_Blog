@@ -12,3 +12,7 @@
 .post-thumb {
     width: 100%;
 }
+
+.list-group-item {
+    margin-bottom: 10px;
+}
