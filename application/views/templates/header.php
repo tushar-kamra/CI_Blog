@@ -29,6 +29,9 @@
                 </ul>
                 <ul class="navbar-nav navbar-right">
                     <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>users/login">Login</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>users/register">Register</a>
                     </li>
                     <li class="nav-item">
@@ -75,5 +78,19 @@
                 <?= "<div class=\"alert alert-dismissible alert-success\">
                         <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
                         <p>" . $this->session->flashdata('post_deleted') . "</p>
+                    </div>" ?>
+            <?php } ?>
+
+            <?php if($this->session->flashdata('login_failed')){ ?>
+                <?= "<div class=\"alert alert-dismissible alert-danger\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                        <p>" . $this->session->flashdata('login_failed') . "</p>
+                    </div>" ?>
+            <?php } ?>
+
+            <?php if($this->session->flashdata('user_loggedin')){ ?>
+                <?= "<div class=\"alert alert-dismissible alert-success\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                        <p>" . $this->session->flashdata('user_loggedin') . "</p>
                     </div>" ?>
             <?php } ?>
