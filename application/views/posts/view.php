@@ -6,13 +6,13 @@
     <?= $post['body']; ?>
 </div>
 
+<?php if($this->session->userdata('user_id') == $post['user_id']) { ?>
 <hr>
-
 <a href= "<?= base_url(); ?>posts/edit/<?= $post['slug']; ?>" class="btn btn-secondary float-left">Edit</a>
 <?= form_open(base_url() . 'posts/delete/' . $post['id']); ?>
     <button type="submit" class="btn btn-danger">Delete</button>
 </form>
-
+<?php } ?>
 <hr>
 
 <h3>Comments</h3>

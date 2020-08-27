@@ -28,18 +28,24 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav navbar-right">
+                <?php if(!$this->session->userdata('logged_in')){ ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>users/login">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>users/register">Register</a>
                     </li>
+                <?php } else { ?>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>posts/create">Create Post</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?= base_url() ?>categories/create">Create Category</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= base_url() ?>users/logout">Logout</a>
+                    </li>
+                <?php } ?>
                 </ul>
             </div>
         </nav>
@@ -92,5 +98,19 @@
                 <?= "<div class=\"alert alert-dismissible alert-success\">
                         <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
                         <p>" . $this->session->flashdata('user_loggedin') . "</p>
+                    </div>" ?>
+            <?php } ?>
+
+            <?php if($this->session->flashdata('user_loggedout')){ ?>
+                <?= "<div class=\"alert alert-dismissible alert-success\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                        <p>" . $this->session->flashdata('user_loggedout') . "</p>
+                    </div>" ?>
+            <?php } ?>
+
+            <?php if($this->session->flashdata('category_deleted')){ ?>
+                <?= "<div class=\"alert alert-dismissible alert-success\">
+                        <button type=\"button\" class=\"close\" data-dismiss=\"alert\">&times;</button>
+                        <p>" . $this->session->flashdata('category_deleted') . "</p>
                     </div>" ?>
             <?php } ?>

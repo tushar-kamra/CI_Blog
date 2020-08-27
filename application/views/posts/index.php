@@ -16,3 +16,7 @@
     </div>
 
 <?php endforeach; ?>
+
+<div class="pagination-links">
+    <?= $this->pagination->create_links(); ?>
+</div>
